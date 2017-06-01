@@ -33,7 +33,7 @@ CREATE TABLE `account` (
   `type` int(1) DEFAULT NULL,
   `idle` int(1) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -42,7 +42,7 @@ CREATE TABLE `account` (
 
 LOCK TABLES `account` WRITE;
 /*!40000 ALTER TABLE `account` DISABLE KEYS */;
-INSERT INTO `account` VALUES (1,'admin','123456','admin','admin','admin@itzeno.com','999999999',1,0),(2,'hocvien1','123456','Nguyễn Quang','KTX','quangnguyen@gmail.com','1234567890',2,0),(3,'hocvien2','123456','Sơn Tùng MTP','Núi Thái Sơn','tungnui@mtp.com','1643215487',2,0),(4,'vegeta','123456','Quang Nguyen','KTX','vegeta@gmail.com','01234567890',2,0),(13,'abcde','123123','Abcdef','KTX','abc@gmail.com','01234567890',2,0);
+INSERT INTO `account` VALUES (1,'admin','123456','admin','admin','admin@itzeno.com','999999999',1,0),(2,'hocvien1','123456','Nguyễn Quang','KTX','quangnguyen@gmail.com','1234567890',2,0),(3,'hocvien2','123456','Sơn Tùng MTP','Núi Thái Sơn','tungnui@mtp.com','1643215487',2,0),(4,'vegeta','123456','Quang Nguyen','KTX','vegeta@gmail.com','01234567890',2,0),(13,'abcde','123123','Abcdef','KTX','abc@gmail.com','01234567890',2,0),(14,'vegeta1','123456','Ve Ge Ta','BMT - Đak Lak','vegeta@vt.dz','11311311321',2,0);
 /*!40000 ALTER TABLE `account` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -102,112 +102,6 @@ INSERT INTO `course` VALUES (1,'Cách học từ vựng hiệu quả','images/tu
 UNLOCK TABLES;
 
 --
--- Table structure for table `exam`
---
-
-DROP TABLE IF EXISTS `exam`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `exam` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `idcourse` int(11) DEFAULT NULL,
-  `name` varchar(45) DEFAULT NULL,
-  `idle` int(1) DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `exam`
---
-
-LOCK TABLES `exam` WRITE;
-/*!40000 ALTER TABLE `exam` DISABLE KEYS */;
-/*!40000 ALTER TABLE `exam` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `examdetail`
---
-
-DROP TABLE IF EXISTS `examdetail`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `examdetail` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `idexam` int(11) DEFAULT NULL,
-  `idquestion` int(11) DEFAULT NULL,
-  `idle` int(1) DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `examdetail`
---
-
-LOCK TABLES `examdetail` WRITE;
-/*!40000 ALTER TABLE `examdetail` DISABLE KEYS */;
-/*!40000 ALTER TABLE `examdetail` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `lesson`
---
-
-DROP TABLE IF EXISTS `lesson`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `lesson` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `idcourse` int(11) DEFAULT NULL,
-  `name` varchar(45) DEFAULT NULL,
-  `content` varchar(1000) DEFAULT NULL,
-  `idle` int(1) DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `lesson`
---
-
-LOCK TABLES `lesson` WRITE;
-/*!40000 ALTER TABLE `lesson` DISABLE KEYS */;
-/*!40000 ALTER TABLE `lesson` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `question`
---
-
-DROP TABLE IF EXISTS `question`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `question` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `idcourse` int(11) DEFAULT NULL,
-  `content` varchar(1000) DEFAULT NULL,
-  `option1` varchar(45) DEFAULT NULL,
-  `option2` varchar(45) DEFAULT NULL,
-  `option3` varchar(45) DEFAULT NULL,
-  `option4` varchar(45) DEFAULT NULL,
-  `correctanswer` varchar(1) DEFAULT NULL,
-  `idle` int(1) DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `question`
---
-
-LOCK TABLES `question` WRITE;
-/*!40000 ALTER TABLE `question` DISABLE KEYS */;
-/*!40000 ALTER TABLE `question` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
 -- Table structure for table `regcourse`
 --
 
@@ -242,4 +136,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-06-01 19:04:55
+-- Dump completed on 2017-06-02  1:52:03
