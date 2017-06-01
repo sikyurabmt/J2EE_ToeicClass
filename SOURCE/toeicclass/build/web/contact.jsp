@@ -63,7 +63,7 @@
                                 <input type="text" name="contact_name" id="contact_name">						
                             </div>
                             <div>
-                                <span>Địa chỉ Email </span>		
+                                <span>Email </span>		
                                 <input type="text" name="email" id="email">						
                             </div>
                             <div>

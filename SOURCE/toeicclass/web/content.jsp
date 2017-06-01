@@ -27,8 +27,7 @@
                                 <div class="top-content">
                                     <h5><a href="#"><%=c.getName()%></a></h5>
                                     <div class="white">
-                                        <a href="course.jsp?courseId=<%=c.getId()%>" class="hvr-shutter-in-vertical hvr-shutter-in-vertical2" style="margin-right: 50px;">Xem chi tiết</a>
-                                        <a href="course.jsp?courseId=<%=c.getId()%>" class="hvr-shutter-in-vertical hvr-shutter-in-vertical">Mua ngay</a>
+                                        <a href="course.jsp?courseId=<%=c.getId()%>" class="hvr-shutter-in-vertical hvr-shutter-in-vertical" style="margin-left: 60px;">Xem chi tiết</a>
                                         <div class="clearfix"></div>
                                     </div>
                                 </div>							
