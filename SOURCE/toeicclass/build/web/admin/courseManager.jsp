@@ -95,37 +95,37 @@
                                     <div class="content table-responsive table-full-width">
                                         <table class="table table-striped">
                                             <thead>
-                                            <th width="5%">STT</th>
-                                            <th width="20%">Tên khoá học</th>
-                                            <th width="auto">Hình ảnh</th>
-                                            <th width="auto">Nội dung</th>
-                                            <th width="10%">Hành động</th>
+                                            <th width="10%"><center>STT</center></th>
+                                            <th width="auto">Tên khoá học</th>
+                                            <th width="10%">Hình ảnh</th>
+                                            <th width="30%"><center>Hành động</center></th>
+                                            </center>
                                             </thead>
 
                                             <tbody>
-                                                <% int stt = 1; %>
+                                                <% int stt = 1;%>
                                                 <c:forEach items="${listCourse}" var="list">
                                                     <tr>
-                                                        <td><%=stt%></td>
+                                                        <td><center><%=stt%></center></td>
                                                         <td>${list.getName()}</td>
                                                         <td>
                                                             <div class="col-xs-4">
                                                                 <center>
                                                                     <div class="avatar">
-                                                                        <img src="${root}/${list.getImage()}" alt="Circle Image" class="img-responsive">
+                                                                        <img src="${list.getImage()}" alt="Circle Image" class="img-responsive">
                                                                     </div>
                                                                 </center>
                                                             </div>
                                                         </td>
-                                                        <td>${list.getContent()}</td>
                                                         <td>
                                                 <center>
+                                                    <a href="${root}/course.jsp?courseId=${list.getId()}">Xem</a> -
                                                     <a href="${root}/admin/courseUpdate.jsp?command=update&course_id=${list.getId()}">Sửa</a> - 
                                                     <a href="/toeicclass/CourseServlet?command=delete&course_id=${list.getId()}">Xoá</a>
                                                 </center>
                                                 </td>
                                                 </tr>
-                                                <% stt++; %>
+                                                <% stt++;%>
                                             </c:forEach>
                                             </tbody>
                                         </table>

@@ -89,7 +89,7 @@
                                                 <div class="form-group">
                                                     <label>Hình đại diện</label>
                                                     <div class="row">
-                                                        <input type="hidden" value="${root}/<%=course.getImage()%>" name="course_image"/>
+                                                        <input type="hidden" value="<%=course.getImage()%>" name="course_image"/>
                                                         <div class="col-xs-4">
                                                             <center>
                                                                 <div class="avatar">

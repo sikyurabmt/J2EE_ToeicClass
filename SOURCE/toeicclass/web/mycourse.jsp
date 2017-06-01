@@ -91,12 +91,11 @@
                         %>
                         <div class="col-md-3 md-col" style="margin-bottom: 10px">
                             <div class="col-md">
-                                <a href="#"><img src="<%=c.getImage()%>" height="240"/></a>	
+                                <a href="course.jsp?courseId=<%=c.getId()%>"><img src="<%=c.getImage()%>" height="240"/></a>	
                                 <div class="top-content">
-                                    <h5><a href="#"><%=c.getName()%></a></h5>
+                                    <h5><a href="course.jsp?courseId=<%=c.getId()%>"><%=c.getName()%></a></h5>
                                     <div class="white">
                                         <a href="course.jsp?courseId=<%=c.getId()%>" class="hvr-shutter-in-vertical hvr-shutter-in-vertical2" style="margin-right: 50px;">Xem chi tiết</a>
-                                        <a href="course.jsp?courseId=<%=c.getId()%>" class="hvr-shutter-in-vertical hvr-shutter-in-vertical">Mua ngay</a>
                                         <div class="clearfix"></div>
                                     </div>
                                 </div>							
