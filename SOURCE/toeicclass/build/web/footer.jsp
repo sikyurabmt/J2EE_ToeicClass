@@ -4,7 +4,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>footer</title>
-         <link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+        <link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
         <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
         <script src="js/jquery.min.js"></script>
         <!-- Custom Theme files -->
@@ -29,14 +29,14 @@
         <!--slider-script-->
         <script src="js/responsiveslides.min.js"></script>
         <script>
-                    $(function () {
-                        $("#slider1").responsiveSlides({
-                            auto: true,
-                            speed: 500,
-                            namespace: "callbacks",
-                            pager: true,
-                        });
-                    });
+            $(function () {
+                $("#slider1").responsiveSlides({
+                    auto: true,
+                    speed: 500,
+                    namespace: "callbacks",
+                    pager: true,
+                });
+            });
         </script>
         <!--//slider-script-->
         <script>$(document).ready(function (c) {
@@ -57,67 +57,21 @@
         </script>
     </head>
     <body>
-
         <!---->
         <div class="footer">
             <div class="footer-top">
                 <div class="container">
                     <div class="col-md-4 footer-in">
-                        <h4><i> </i>Suspendisse sed</h4>
-                        <p>Aliquam dignissim porttitor tortor non fermentum. Curabitur in magna lectus. Duis sed eros diam. Lorem ipsum dolor sit amet, consectetur.</p>
+                        <h4><i class="cross"> </i>John Dewey</h4>
+                        <p>Học tập không phải để chuẩn bị cho cuộc sống, bản thân nó đã là cuộc sống.</p>
                     </div>
                     <div class="col-md-4 footer-in">
-                        <h4><i class="cross"> </i>Suspendisse sed</h4>
-                        <p>Aliquam dignissim porttitor tortor non fermentum. Curabitur in magna lectus. Duis sed eros diam. Lorem ipsum dolor sit amet, consectetur.</p>
+                        <h4><i class="cross"> </i>Anonymous</h4>
+                        <p>Liều thuốc chữa lành cho chán nản là sự tò mò. Không cách nào chữa khỏi sự tò mò.</p>
                     </div>
                     <div class="col-md-4 footer-in">
-                        <h4><i class="down"> </i>Suspendisse sed</h4>
-                        <p>Aliquam dignissim porttitor tortor non fermentum. Curabitur in magna lectus. Duis sed eros diam. Lorem ipsum dolor sit amet, consectetur.</p>
-                    </div>
-                    <div class="clearfix"></div>
-                </div>
-            </div>
-            <!---->
-            <div class="footer-middle">
-                <div class="container">
-                    <div class="footer-middle-in">
-                        <h6>About us</h6>
-                        <p>Suspendisse sed accumsan risus. Curabitur rhoncus, elit vel tincidunt elementum, nunc urna tristique nisi, in interdum libero magna tristique ante. adipiscing varius. Vestibulum dolor lorem.</p>
-                    </div>
-                    <div class="footer-middle-in">
-                        <h6>Information</h6>
-                        <ul>
-                            <li><a href="#">About Us</a></li>
-                            <li><a href="#">Delivery Information</a></li>
-                            <li><a href="#">Privacy Policy</a></li>
-                            <li><a href="#">Terms & Conditions</a></li>
-                        </ul>
-                    </div>
-                    <div class="footer-middle-in">
-                        <h6>Customer Service</h6>
-                        <ul>
-                            <li><a href="contact.html">Contact Us</a></li>
-                            <li><a href="#">Returns</a></li>
-                            <li><a href="#">Site Map</a></li>
-                        </ul>
-                    </div>
-                    <div class="footer-middle-in">
-                        <h6>My Account</h6>
-                        <ul>
-                            <li><a href="account.html">My Account</a></li>
-                            <li><a href="#">Order History</a></li>
-                            <li><a href="wishlist.html">Wish List</a></li>
-                            <li><a href="#">Newsletter</a></li>
-                        </ul>
-                    </div>
-                    <div class="footer-middle-in">
-                        <h6>Extras</h6>
-                        <ul>
-                            <li><a href="#">Brands</a></li>
-                            <li><a href="#">Gift Vouchers</a></li>
-                            <li><a href="#">Affiliates</a></li>
-                            <li><a href="#">Specials</a></li>
-                        </ul>
+                        <h4><i class="cross"> </i>Anonymous</h4>
+                        <p>Không bao giờ là lãng phí thời gian nếu bạn học được cái gì đó.</p>
                     </div>
                     <div class="clearfix"></div>
                 </div>
@@ -139,8 +93,6 @@
                 });
             </script>
             <a href="#" id="toTop" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
-
         </div>
-
     </body>
 </html>

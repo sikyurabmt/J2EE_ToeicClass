@@ -60,30 +60,36 @@
                                     <div class="content table-responsive table-full-width">
                                         <table class="table table-striped">
                                             <thead>
-                                            <th>ID</th>
+                                            <th>STT</th>
                                             <th>Tài khoản</th>
                                             <th>Tên</th>
                                             <th>Địa chỉ</th>
                                             <th>Số điện thoại</th>
-                                            <th>Hành động</th>
+                                            <th><center>Hành động </center></th>
                                             </thead>
 
                                             <tbody>
                                                 <%
                                                     AccountDAO accountDAO = new AccountDAO();
+                                                    int stt = 1;
                                                     for (Account c : accountDAO.getAllAccount()) {
                                                 %>
                                                 <tr>
-                                                    <td><%=c.getId()%></td>
+                                                    <td><%=stt%></td>
                                                     <td><%=c.getUsername()%></td>
                                                     <td><%=c.getName()%></td>
                                                     <td><%=c.getAddress()%></td>
                                                     <td><%=c.getPhonenumber()%></td>
-                                                    <td>Xoá</td>
-                                                </tr>
-                                                <%
-                                                    }
-                                                %>
+                                                    <td>
+                                            <center>
+                                                <a href="/toeicclass/AccountServlet?command=delete&account_id=<%=c.getId()%>">Xoá</a>
+                                            </center>
+                                            </td>
+                                            </tr>
+                                            <%
+                                                    stt++;
+                                                }
+                                            %>
                                             </tbody>
                                         </table>
                                     </div>

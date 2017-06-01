@@ -7,18 +7,25 @@
     </head>
     <body>
         <jsp:include page="header.jsp"></jsp:include>
-        <div class="container">
+            <div class="container">
                 <div class="account" style="margin-left: 25%">
                     <form action="AccountServlet" method="POST">
-                    <%if (request.getParameter("error") != null) {%>
+                    <%
+
+                        if (session.getAttribute("error") != null && session.getAttribute("error") != "") {
+
+                    %>
                     <div>
-                        <p style="color:red"><%=request.getParameter("error")%></p>
-                    </div> 
-                    <%}%>
+                        <p style="color:red"><%=session.getAttribute("error")%></p>
+                    </div>
+                    <%
+                            session.setAttribute("error", "");
+                        }
+                    %>
                     <div>
                         <span>Tên đăng nhập *</span>
                         <br/>
-                        <input type="text" name="email"/>
+                        <input type="text" name="username"/>
                     </div> 	
                     <div> 
                         <span class="word">Mật khẩu *</span>

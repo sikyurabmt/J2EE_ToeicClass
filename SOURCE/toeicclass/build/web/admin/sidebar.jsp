@@ -4,6 +4,7 @@
     Author     : VegetaPC
 --%>
 
+<%@page import="BEAN.Account"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
@@ -13,11 +14,27 @@
         <c:set var="root" value="${pageContext.request.contextPath}"/>
     </head>
     <body>
+        <%
+            Account acc = null;
+            if (session.getAttribute("account") != null) {
+                acc = (Account) session.getAttribute("account");
+            }
+        %>
         <div class="sidebar" data-background-color="white" data-active-color="danger">
             <div class="sidebar-wrapper">
                 <div class="logo">
                     <a href="${root}/admin/index.jsp" class="simple-text">
-                        TOEIC CLASS
+                        <%
+                            if (acc != null) {
+                        %>
+                        XIN CHÀO, <%=acc.getName()%>
+                        <%
+                            } else {
+                        %>
+                        CHƯA ĐĂNG NHẬP
+                        <%
+                            }
+                        %>
                     </a>
                 </div>
 
@@ -25,7 +42,7 @@
                     <li>
                         <a href="${root}/admin/index.jsp">
                             <i class="ti-panel"></i>
-                            <p>Dashboard</p>
+                            <p>Thống kê</p>
                         </a>
                     </li>
                     <li>
@@ -41,45 +58,15 @@
                         </a>
                     </li>
                     <li>
-                        <a href="${root}/admin/user.jsp">
-                            <i class="ti-user"></i>
-                            <p>User Profile</p>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="${root}/admin/table.jsp">
-                            <i class="ti-view-list-alt"></i>
-                            <p>Table List</p>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="${root}/admin/typography.jsp">
-                            <i class="ti-text"></i>
-                            <p>Typography</p>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="${root}/admin/icons.jsp">
-                            <i class="ti-pencil-alt2"></i>
-                            <p>Icons</p>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="${root}/admin/maps.jsp">
-                            <i class="ti-map"></i>
-                            <p>Maps</p>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="${root}/admin/notifications.jsp">
-                            <i class="ti-bell"></i>
-                            <p>Notifications</p>
+                        <a href="${root}/admin/contactManager.jsp">
+                            <i class="ti-email"></i>
+                            <p>Liên hệ</p>
                         </a>
                     </li>
                     <li class="active-pro">
-                        <a href="${root}/admin/upgrade.jsp">
+                        <a href="/toeicclass/AccountServlet?command=logout">
                             <i class="ti-new-window"></i>
-                            <p>LOG OUT</p>
+                            <p>Đăng xuất</p>
                         </a>
                     </li>
                 </ul>

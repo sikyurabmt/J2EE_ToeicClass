@@ -36,13 +36,12 @@ public class CourseServlet extends HttpServlet {
         String url = "";
         try {
             switch (command) {
-
                 case "delete":
                     courseDAO.deleteCourse(Integer.parseInt(request.getParameter("course_id")));
                     url = "/admin/courseManager.jsp";
                     break;
             }
-        } catch (Exception e) {
+        } catch (NumberFormatException e) {
 
         }
         RequestDispatcher rd = getServletContext().getRequestDispatcher(url);

@@ -106,6 +106,4 @@ public class Account {
     public void setIdle(int idle) {
         this.idle = idle;
     }
-    
-    
 }

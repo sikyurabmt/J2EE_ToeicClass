@@ -47,6 +47,34 @@ INSERT INTO `account` VALUES (1,'admin','123456','admin','admin','admin@itzeno.c
 UNLOCK TABLES;
 
 --
+-- Table structure for table `contact`
+--
+
+DROP TABLE IF EXISTS `contact`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `contact` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(45) DEFAULT NULL,
+  `email` varchar(100) DEFAULT NULL,
+  `subject` varchar(100) DEFAULT NULL,
+  `message` varchar(1000) DEFAULT NULL,
+  `idle` int(1) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `contact`
+--
+
+LOCK TABLES `contact` WRITE;
+/*!40000 ALTER TABLE `contact` DISABLE KEYS */;
+INSERT INTO `contact` VALUES (1,'Nguyễn Văn A','antivirus@atvr.com','Nhận xét về website','Có thể nói website Toeic Class là một trong những website học tiếng anh ra đời từ rất lâu của việt nam. Mặc dù trang web này hướng người dùng đến những bài học ngữ pháp hơn là giao tiếp , nhưng với lượng bài giảng phong phú . Trang web này vẫn xứng đáng nằm trong những website học tiếng anh online miễn phí hay nhất và tốt nhất hiện nay.',0),(2,'Nguyễn Bình','binhng@gmail.com','Đăng ký tất cả các môn học','Nội dung học chưa có ở bất kì môn học nào',0);
+/*!40000 ALTER TABLE `contact` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `course`
 --
 
@@ -69,7 +97,7 @@ CREATE TABLE `course` (
 
 LOCK TABLES `course` WRITE;
 /*!40000 ALTER TABLE `course` DISABLE KEYS */;
-INSERT INTO `course` VALUES (1,'Luyện từ vựng, ngữ pháp','Template/Frontend/Image/guideline.png','Cung cấp các bài hướng dẫn sát với đề thi',0),(2,'Bài tập phần nghe, đọc','Template/Frontend/Image/exercises.png','Chúng tôi cung cấp các dạng bài tập có trong đề thi Toeic',0),(3,'Bài tập phần nghe, đọc 2','/toeicclass/admin/assets/img/faces/face-1.jpg','Thông tin chữ Hán và chữ Nôm dựa theo cơ\r\n sở dữ liệu của phần mềm WinVNKey,\r\n đóng góp bởi học giả Lê Sơn Thanh; đã đ\r\nược các tác giả đồng ý đưa vào đây. (chi tiết)\r\n',0),(4,'QWERTTY','DuongDanHinhAnh','Noi dung nay',0),(5,'ProjeQtOr','/toeicclass/admin/assets/img/faces/face-1.jpg','Fujenet',0),(6,'abcdef','/toeicclass/admin/assets/img/faces/face-1.jpg','adsfasdf',0),(7,'vnd','/toeicclass/admin/assets/img/faces/face-1.jpg','vnd',0),(8,'vvvv','/toeicclass/admin/assets/img/faces/face-1.jpg','vvvv',0);
+INSERT INTO `course` VALUES (1,'Cách học từ vựng hiệu quả','images/tuvung.png','Cung cấp các bài hướng dẫn sát với đề thi',0),(2,'Bài tập phần nghe, đọc','images/default.png','Chúng tôi cung cấp các dạng bài tập có trong đề thi Toeic',0),(3,'Luyện thi toeic 450','images/toeic450.png','Thông tin chữ Hán và chữ Nôm dựa theo cơ\r\n sở dữ liệu của phần mềm WinVNKey,\r\n đóng góp bởi học giả Lê Sơn Thanh; đã đ\r\nược các tác giả đồng ý đưa vào đây. (chi tiết)\r\n',0),(4,'Luyện thi toeic 990','images/toeic990.png','Noi dung nay',0),(5,'600 từ vựng TOEIC','images/600tv.png','Fujenet',0),(6,'abcdef','images/default.png','adsfasdf',0),(7,'vnd','images/default.png','vnd',0),(8,'vvvv','images/default.png','vvvv',0);
 /*!40000 ALTER TABLE `course` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -178,6 +206,32 @@ LOCK TABLES `question` WRITE;
 /*!40000 ALTER TABLE `question` DISABLE KEYS */;
 /*!40000 ALTER TABLE `question` ENABLE KEYS */;
 UNLOCK TABLES;
+
+--
+-- Table structure for table `regcourse`
+--
+
+DROP TABLE IF EXISTS `regcourse`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `regcourse` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `idaccount` int(11) DEFAULT NULL,
+  `idcourse` int(11) DEFAULT NULL,
+  `idle` int(1) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `regcourse`
+--
+
+LOCK TABLES `regcourse` WRITE;
+/*!40000 ALTER TABLE `regcourse` DISABLE KEYS */;
+INSERT INTO `regcourse` VALUES (1,1,1,0),(2,2,2,0);
+/*!40000 ALTER TABLE `regcourse` ENABLE KEYS */;
+UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -188,4 +242,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-05-29 17:44:38
+-- Dump completed on 2017-06-01 17:43:20

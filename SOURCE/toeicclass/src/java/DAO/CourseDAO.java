@@ -40,6 +40,22 @@ public class CourseDAO {
         }
         return list;
     }
+    
+    public int getNumberOfCourse() throws SQLException {
+        int num = 0;
+        try (Connection connection = DBConnect.getConnection()) {
+            String sql = "SELECT * "
+                    + "FROM course "
+                    + "WHERE idle = 0";
+            PreparedStatement ps = connection.prepareCall(sql);
+            ResultSet rs = ps.executeQuery();
+            while (rs.next()) {
+                num++;
+            }
+            connection.close();
+        }
+        return num;
+    }
 
     public ArrayList<Course> getAllCourseByName(String name) throws SQLException {
         Connection connection = DBConnect.getConnection();
@@ -139,10 +155,13 @@ public class CourseDAO {
     }
 
     public static void main(String[] args) throws SQLException {
-//        CourseDAO courseDAO = new CourseDAO();
+        CourseDAO courseDAO = new CourseDAO();
 //        ArrayList<Course> courseList = courseDAO.getAllCourseByName("a");
 //        for (Course c : courseList) {
 //            System.out.println(c.getName());
 //        }
+        Course c = new Course();
+        c = courseDAO.getCourseById(1);
+        System.out.println(c.getName());
     }
 }

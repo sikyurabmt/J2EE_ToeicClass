@@ -12,6 +12,14 @@
         <servlet-name>CheckExistUsernameServlet</servlet-name>
         <servlet-class>CONTROLLER.CheckExistUsernameServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>RegCourseServlet</servlet-name>
+        <servlet-class>CONTROLLER.RegCourseServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ContactServlet</servlet-name>
+        <servlet-class>CONTROLLER.ContactServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>CourseServlet</servlet-name>
         <url-pattern>/CourseServlet</url-pattern>
@@ -23,6 +31,14 @@
     <servlet-mapping>
         <servlet-name>CheckExistUsernameServlet</servlet-name>
         <url-pattern>/CheckExistUsernameServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>RegCourseServlet</servlet-name>
+        <url-pattern>/RegCourseServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ContactServlet</servlet-name>
+        <url-pattern>/ContactServlet</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

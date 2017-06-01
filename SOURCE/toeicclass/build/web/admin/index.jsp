@@ -4,6 +4,10 @@
     Author     : VegetaPC
 --%>
 
+<%@page import="DAO.RegCourseDAO"%>
+<%@page import="DAO.CourseDAO"%>
+<%@page import="DAO.ContactDAO"%>
+<%@page import="DAO.AccountDAO"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
@@ -39,6 +43,12 @@
     </head>
 
     <body>
+        <%
+            AccountDAO accountDAO = new AccountDAO();
+            ContactDAO contactDAO = new ContactDAO();
+            CourseDAO courseDAO = new CourseDAO();
+            RegCourseDAO regCourseDAO = new RegCourseDAO();
+        %>
         <div class="wrapper">
             <jsp:include page="sidebar.jsp"/>
             <div class="main-panel">
@@ -51,9 +61,8 @@
                                 <span class="icon-bar bar2"></span>
                                 <span class="icon-bar bar3"></span>
                             </button>
-                            <a class="navbar-brand" href="#">Dashboard</a>
+                            <a class="navbar-brand" href="#">THỐNG KÊ</a>
                         </div>
-                        <jsp:include page="header.jsp"/>
                 </nav>
 
                 <div class="content">
@@ -70,15 +79,15 @@
                                             </div>
                                             <div class="col-xs-7">
                                                 <div class="numbers">
-                                                    <p>Capacity</p>
-                                                    105GB
+                                                    <p>Số học viên</p>
+                                                    <%=accountDAO.getNumberOfAccount()%>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="footer">
                                             <hr />
                                             <div class="stats">
-                                                <i class="ti-reload"></i> Updated now
+                                                <i class="ti-reload"></i> Người dùng loại học viên
                                             </div>
                                         </div>
                                     </div>
@@ -96,15 +105,15 @@
                                             </div>
                                             <div class="col-xs-7">
                                                 <div class="numbers">
-                                                    <p>Revenue</p>
-                                                    $1,345
+                                                    <p>Số khoá học</p>
+                                                    <%=courseDAO.getNumberOfCourse()%>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="footer">
                                             <hr />
                                             <div class="stats">
-                                                <i class="ti-calendar"></i> Last day
+                                                <i class="ti-calendar"></i> Số khoá học cung cấp
                                             </div>
                                         </div>
                                     </div>
@@ -122,15 +131,15 @@
                                             </div>
                                             <div class="col-xs-7">
                                                 <div class="numbers">
-                                                    <p>Errors</p>
-                                                    23
+                                                    <p>Số khoá đăng ký</p>
+                                                    <%=regCourseDAO.getNumberOfRegCourse()%>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="footer">
                                             <hr />
                                             <div class="stats">
-                                                <i class="ti-timer"></i> In the last hour
+                                                <i class="ti-timer"></i> Số khoá học được đăng ký
                                             </div>
                                         </div>
                                     </div>
@@ -148,15 +157,15 @@
                                             </div>
                                             <div class="col-xs-7">
                                                 <div class="numbers">
-                                                    <p>Followers</p>
-                                                    +45
+                                                    <p>Lượng phản hồi</p>
+                                                    <%=contactDAO.getNumberOfContact()%>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="footer">
                                             <hr />
                                             <div class="stats">
-                                                <i class="ti-reload"></i> Updated now
+                                                <i class="ti-reload"></i> Phản hồi, câu hỏi của người dùng
                                             </div>
                                         </div>
                                     </div>
@@ -168,68 +177,16 @@
                             <div class="col-md-12">
                                 <div class="card">
                                     <div class="header">
-                                        <h4 class="title">Users Behavior</h4>
-                                        <p class="category">24 Hours performance</p>
+                                        <h4 class="title">Lượng truy cập</h4>
+                                        <p class="category">Trong 24 giờ qua</p>
                                     </div>
                                     <div class="content">
                                         <div id="chartHours" class="ct-chart"></div>
                                         <div class="footer">
                                             <div class="chart-legend">
-                                                <i class="fa fa-circle text-info"></i> Open
-                                                <i class="fa fa-circle text-danger"></i> Click
-                                                <i class="fa fa-circle text-warning"></i> Click Second Time
-                                            </div>
-                                            <hr>
-                                            <div class="stats">
-                                                <i class="ti-reload"></i> Updated 3 minutes ago
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="card">
-                                    <div class="header">
-                                        <h4 class="title">Email Statistics</h4>
-                                        <p class="category">Last Campaign Performance</p>
-                                    </div>
-                                    <div class="content">
-                                        <div id="chartPreferences" class="ct-chart ct-perfect-fourth"></div>
-
-                                        <div class="footer">
-                                            <div class="chart-legend">
-                                                <i class="fa fa-circle text-info"></i> Open
-                                                <i class="fa fa-circle text-danger"></i> Bounce
-                                                <i class="fa fa-circle text-warning"></i> Unsubscribe
-                                            </div>
-                                            <hr>
-                                            <div class="stats">
-                                                <i class="ti-timer"></i> Campaign sent 2 days ago
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="card ">
-                                    <div class="header">
-                                        <h4 class="title">2015 Sales</h4>
-                                        <p class="category">All products including Taxes</p>
-                                    </div>
-                                    <div class="content">
-                                        <div id="chartActivity" class="ct-chart"></div>
-
-                                        <div class="footer">
-                                            <div class="chart-legend">
-                                                <i class="fa fa-circle text-info"></i> Tesla Model S
-                                                <i class="fa fa-circle text-warning"></i> BMW 5 Series
-                                            </div>
-                                            <hr>
-                                            <div class="stats">
-                                                <i class="ti-check"></i> Data information certified
+                                                <i class="fa fa-circle text-info"></i> Vào trang chủ
+                                                <i class="fa fa-circle text-danger"></i> Vào trang khoá học
+                                                <i class="fa fa-circle text-warning"></i> Vào trang khoá học nhiều hơn 2 lần
                                             </div>
                                         </div>
                                     </div>
@@ -238,33 +195,6 @@
                         </div>
                     </div>
                 </div>
-
-                <footer class="footer">
-                    <div class="container-fluid">
-                        <nav class="pull-left">
-                            <ul>
-                                <li>
-                                    <a href="http://www.creative-tim.com">
-                                        Creative Tim
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="http://blog.creative-tim.com">
-                                        Blog
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="http://www.creative-tim.com/license">
-                                        Licenses
-                                    </a>
-                                </li>
-                            </ul>
-                        </nav>
-                        <div class="copyright pull-right">
-                            &copy; <script>document.write(new Date().getFullYear())</script>, made with <i class="fa fa-heart heart"></i> by <a href="http://www.creative-tim.com">Creative Tim</a>
-                        </div>
-                    </div>
-                </footer>
             </div>
         </div>
     </body>
@@ -294,13 +224,6 @@
     <script type="text/javascript">
                                 $(document).ready(function () {
                                     demo.initChartist();
-                                    $.notify({
-                                        icon: 'ti-gift',
-                                        message: "Welcome to <b>Paper Dashboard</b> - a beautiful Bootstrap freebie for your next project."
-                                    }, {
-                                        type: 'success',
-                                        timer: 4000
-                                    });
                                 });
     </script>
 

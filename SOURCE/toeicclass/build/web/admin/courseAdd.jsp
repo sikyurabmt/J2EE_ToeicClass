@@ -80,11 +80,11 @@
                                                 <div class="form-group">
                                                     <label>Hình đại diện</label>
                                                     <div class="row">
-                                                        <input type="hidden" value="${root}/admin/assets/img/faces/face-1.jpg" name="course_image"/>
+                                                        <input type="hidden" value="${root}/images/default.png" name="course_image"/>
                                                         <div class="col-xs-4">
                                                             <center>
                                                                 <div class="avatar">
-                                                                    <img src="${root}/admin/assets/img/faces/face-1.jpg" alt="Circle Image" class="img-circle img-no-padding img-responsive">
+                                                                    <img src="${root}/images/default.png" alt="Circle Image" class="img-circle img-no-padding img-responsive">
                                                                 </div>
                                                             </center>
                                                         </div>
