@@ -82,7 +82,7 @@
                                                     <td><%=c.getPhonenumber()%></td>
                                                     <td>
                                             <center>
-                                                <a href="/toeicclass/AccountServlet?command=delete&account_id=<%=c.getId()%>">Xoá</a>
+                                                <a href="/toeicclass/AccountServlet?command=delete&account_id=<%=c.getId()%>" onclick = "if (! confirm('Bạn có muốn xoá không?')) { return false; }">Xoá</a>
                                             </center>
                                             </td>
                                             </tr>

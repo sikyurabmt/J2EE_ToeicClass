@@ -85,7 +85,7 @@
                                                     <td><%=c.getMessage()%></td>
                                                     <td>
                                             <center>
-                                                <a href="/toeicclass/ContactServlet?command=delete&contact_id=<%=c.getId()%>">Xoá</a>
+                                                <a href="/toeicclass/ContactServlet?command=delete&contact_id=<%=c.getId()%>" onclick = "if (! confirm('Bạn có muốn xoá không?')) { return false; }">Xoá</a>
                                             </center>
                                             </td>
                                             </tr>

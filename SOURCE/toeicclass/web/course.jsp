@@ -94,7 +94,7 @@
                         if (!rcDAO.checkRegister(acc.getId(), course.getId())) {
                 %>
                 <div class="col-md-2 single-top-in">
-                    <a href="/toeicclass/RegCourseServlet?command=insert&idaccount=<%=acc.getId()%>&idcourse=<%=course.getId()%>" class="hvr-shutter-in-vertical cart-to">Đăng ký học</a>
+                    <a href="/toeicclass/RegCourseServlet?command=insert&idaccount=<%=acc.getId()%>&idcourse=<%=course.getId()%>" class="hvr-shutter-in-vertical cart-to" onclick = "if (! confirm('Bạn có muốn đăng ký khoá học này không?')) { return false; }">Đăng ký học</a>
                 </div>
                 <%
                         }

@@ -121,7 +121,7 @@
                                                 <center>
                                                     <a href="${root}/course.jsp?courseId=${list.getId()}">Xem</a> -
                                                     <a href="${root}/admin/courseUpdate.jsp?command=update&course_id=${list.getId()}">Sửa</a> - 
-                                                    <a href="/toeicclass/CourseServlet?command=delete&course_id=${list.getId()}">Xoá</a>
+                                                    <a href="/toeicclass/CourseServlet?command=delete&course_id=${list.getId()}" onclick = "if (! confirm('Bạn có muốn xoá không?')) { return false; }">Xoá</a>
                                                 </center>
                                                 </td>
                                                 </tr>
