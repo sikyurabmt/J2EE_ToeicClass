@@ -83,14 +83,11 @@
 
         <jsp:include page="header.jsp"></jsp:include>
 
-            <div class="container" style="margin-bottom: 50px">
-                <div class="single">
-                    <div class="col-md-3 single-top">
-                        <img class="etalage_thumb_image img-responsive" src="<%=course.getImage()%>" alt="" width="240" height="240"/>
-                </div>	
-                <div class="col-md-7 single-top-in single-para">    
-                    <center><h4><%=course.getName()%></h4></center>
-                </div>
+            <div class="container">
+                <div class="row" style="margin-top: 30px">
+                    <div class="col-md-10 single-top-in single-para">    
+                        <center><h1><%=course.getName()%></h1></center>
+                    </div>
 
                 <%
                     if (acc != null) {
@@ -103,13 +100,14 @@
                         }
                     }
                 %>
-                <div  style="margin-top: 100px">
-                    <p><%=course.getContent()%></p>
-                </div>
+            </div>
+            <div class="row" style="margin-top: 50px">
+                <p><%=course.getContent()%></p>
             </div>
         </div>
+    </div>
 
-        <jsp:include page="footer.jsp"></jsp:include>
+    <jsp:include page="footer.jsp"></jsp:include>
 
-    </body>
+</body>
 </html>

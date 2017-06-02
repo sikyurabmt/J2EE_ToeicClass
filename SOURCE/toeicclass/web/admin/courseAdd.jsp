@@ -36,6 +36,7 @@
         <link href="http://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
         <link href='https://fonts.googleapis.com/css?family=Muli:400,300' rel='stylesheet' type='text/css'>
         <link href="${root}/admin/assets/css/themify-icons.css" rel="stylesheet">
+        <script src="//cdn.ckeditor.com/4.7.0/full/ckeditor.js"></script>
     </head>
 
     <body>
@@ -107,7 +108,7 @@
                                             <div class="col-md-12">
                                                 <div class="form-group">
                                                     <label>Nội dung</label>
-                                                    <textarea rows="10" class="form-control border-input" placeholder="Nhập nội dung khoá học" name="course_content"></textarea>
+                                                    <textarea rows="10" name="course_content" id="course_content"></textarea>
                                                 </div>
                                             </div>
                                         </div>
@@ -125,4 +126,7 @@
             </div>
         </div>
     </body>
+    <script>
+        CKEDITOR.replace('course_content');
+    </script>
 </html>
