@@ -22,25 +22,27 @@ import java.util.logging.Logger;
 public class CourseDAO {
 
     public ArrayList<Course> getAllCourse() throws SQLException {
-        Connection connection = DBConnect.getConnection();
-        String sql = "SELECT * "
-                + "FROM course "
-                + "WHERE idle = 0";
-        PreparedStatement ps = connection.prepareCall(sql);
-        ResultSet rs = ps.executeQuery();
-        ArrayList<Course> list = new ArrayList<>();
-        while (rs.next()) {
-            Course course = new Course();
-            course.setId(rs.getInt("id"));
-            course.setName(rs.getString("name"));
-            course.setImage(rs.getString("image"));
-            course.setContent(rs.getString("content"));
-            course.setIdle(rs.getInt("idle"));
-            list.add(course);
+        ArrayList<Course> list;
+        try (Connection connection = DBConnect.getConnection()) {
+            String sql = "SELECT * "
+                    + "FROM course "
+                    + "WHERE idle = 0";
+            PreparedStatement ps = connection.prepareCall(sql);
+            ResultSet rs = ps.executeQuery();
+            list = new ArrayList<>();
+            while (rs.next()) {
+                Course course = new Course();
+                course.setId(rs.getInt("id"));
+                course.setName(rs.getString("name"));
+                course.setImage(rs.getString("image"));
+                course.setContent(rs.getString("content"));
+                course.setIdle(rs.getInt("idle"));
+                list.add(course);
+            }
         }
         return list;
     }
-    
+
     public int getNumberOfCourse() throws SQLException {
         int num = 0;
         try (Connection connection = DBConnect.getConnection()) {
@@ -58,41 +60,45 @@ public class CourseDAO {
     }
 
     public ArrayList<Course> getAllCourseByName(String name) throws SQLException {
-        Connection connection = DBConnect.getConnection();
-        String sql = "SELECT * "
-                + "FROM course "
-                + "WHERE name like '%" + name + "%'"
-                + "AND idle = 0";
-        PreparedStatement ps = connection.prepareCall(sql);
-        ResultSet rs = ps.executeQuery();
-        ArrayList<Course> list = new ArrayList<>();
-        while (rs.next()) {
-            Course course = new Course();
-            course.setId(rs.getInt("id"));
-            course.setName(rs.getString("name"));
-            course.setImage(rs.getString("image"));
-            course.setContent(rs.getString("content"));
-            course.setIdle(rs.getInt("idle"));
-            list.add(course);
+        ArrayList<Course> list;
+        try (Connection connection = DBConnect.getConnection()) {
+            String sql = "SELECT * "
+                    + "FROM course "
+                    + "WHERE name like '%" + name + "%'"
+                    + "AND idle = 0";
+            PreparedStatement ps = connection.prepareCall(sql);
+            ResultSet rs = ps.executeQuery();
+            list = new ArrayList<>();
+            while (rs.next()) {
+                Course course = new Course();
+                course.setId(rs.getInt("id"));
+                course.setName(rs.getString("name"));
+                course.setImage(rs.getString("image"));
+                course.setContent(rs.getString("content"));
+                course.setIdle(rs.getInt("idle"));
+                list.add(course);
+            }
         }
         return list;
     }
 
     public Course getCourseById(int id) throws SQLException {
-        Connection connection = DBConnect.getConnection();
-        String sql = "SELECT * "
-                + "FROM course "
-                + "WHERE id = '" + id + "' "
-                + "AND idle = 0";
-        PreparedStatement ps = connection.prepareCall(sql);
-        ResultSet rs = ps.executeQuery();
-        Course course = new Course();
-        while (rs.next()) {
-            course.setId(rs.getInt("id"));
-            course.setName(rs.getString("name"));
-            course.setImage(rs.getString("image"));
-            course.setContent(rs.getString("content"));
-            course.setIdle(rs.getInt("idle"));
+        Course course;
+        try (Connection connection = DBConnect.getConnection()) {
+            String sql = "SELECT * "
+                    + "FROM course "
+                    + "WHERE id = '" + id + "' "
+                    + "AND idle = 0";
+            PreparedStatement ps = connection.prepareCall(sql);
+            ResultSet rs = ps.executeQuery();
+            course = new Course();
+            while (rs.next()) {
+                course.setId(rs.getInt("id"));
+                course.setName(rs.getString("name"));
+                course.setImage(rs.getString("image"));
+                course.setContent(rs.getString("content"));
+                course.setIdle(rs.getInt("idle"));
+            }
         }
         return course;
     }
@@ -108,6 +114,7 @@ public class CourseDAO {
             ps.setString(3, course.getContent());
             ps.setInt(4, course.getIdle());
             ps.executeUpdate();
+            connection.close();
             return true;
         } catch (SQLException ex) {
             Logger.getLogger(CourseDAO.class.getName()).log(Level.SEVERE, null, ex);
@@ -131,6 +138,7 @@ public class CourseDAO {
             ps.setInt(4, course.getIdle());
             ps.setInt(5, course.getId());
             ps.executeUpdate();
+            connection.close();
             return true;
         } catch (SQLException ex) {
             Logger.getLogger(CourseDAO.class.getName()).log(Level.SEVERE, null, ex);
@@ -147,6 +155,7 @@ public class CourseDAO {
             PreparedStatement ps = connection.prepareCall(sql);
             ps.setInt(1, id);
             ps.executeUpdate();
+            connection.close();
             return true;
         } catch (SQLException ex) {
             Logger.getLogger(CourseDAO.class.getName()).log(Level.SEVERE, null, ex);
@@ -155,13 +164,5 @@ public class CourseDAO {
     }
 
     public static void main(String[] args) throws SQLException {
-        CourseDAO courseDAO = new CourseDAO();
-//        ArrayList<Course> courseList = courseDAO.getAllCourseByName("a");
-//        for (Course c : courseList) {
-//            System.out.println(c.getName());
-//        }
-        Course c = new Course();
-        c = courseDAO.getCourseById(1);
-        System.out.println(c.getName());
     }
 }

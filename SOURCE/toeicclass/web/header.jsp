@@ -26,7 +26,7 @@
                                 <%
                                     if (acc != null) {
                                 %>
-                                <li><a href="#">XIN CHÀO, <%=acc.getName()%></a></li>
+                                <li><a href="myinfo.jsp">XIN CHÀO, <%=acc.getName()%></a></li>
                                 <li><a href="/toeicclass/AccountServlet?command=logout">ĐĂNG XUẤT</a></li>
                                     <%
                                     } else {

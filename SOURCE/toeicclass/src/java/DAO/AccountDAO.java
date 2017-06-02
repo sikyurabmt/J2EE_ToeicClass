@@ -46,7 +46,7 @@ public class AccountDAO {
         }
         return list;
     }
-    
+
     public int getNumberOfAccount() throws SQLException {
         int num = 0;
         try (Connection connection = DBConnect.getConnection()) {
@@ -106,6 +106,32 @@ public class AccountDAO {
         return false;
     }
 
+    public boolean updateAccount(Account account) {
+        Connection connection = DBConnect.getConnection();
+        String sql = "UPDATE account "
+                + "SET password = ?, "
+                + "name = ?, "
+                + "address = ?, "
+                + "email = ?, "
+                + "phonenumber = ? "
+                + "WHERE id = ?";
+        try {
+            PreparedStatement ps = connection.prepareCall(sql);
+            ps.setString(1, account.getPassword());
+            ps.setString(2, account.getName());
+            ps.setString(3, account.getAddress());
+            ps.setString(4, account.getEmail());
+            ps.setString(5, account.getPhonenumber());
+            ps.setInt(6, account.getId());
+            ps.executeUpdate();
+            connection.close();
+            return true;
+        } catch (SQLException ex) {
+            Logger.getLogger(AccountDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return false;
+    }
+
     public Account login(String username, String password) {
         Connection connection = DBConnect.getConnection();
         String sql = "SELECT * "
@@ -134,7 +160,7 @@ public class AccountDAO {
         }
         return null;
     }
-    
+
     public boolean deleteAccount(int id) {
         Connection connection = DBConnect.getConnection();
         String sql = "UPDATE account "
@@ -152,8 +178,6 @@ public class AccountDAO {
     }
 
     public static void main(String[] args) throws SQLException {
-//        AccountDAO dao = new AccountDAO();
-//        Account a = dao.login("admin", "123456");
-//        System.out.println(a.getEmail());
+        
     }
 }

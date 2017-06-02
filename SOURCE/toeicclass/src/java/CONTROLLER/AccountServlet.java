@@ -51,10 +51,11 @@ public class AccountServlet extends HttpServlet {
 
         String command = request.getParameter("command");
         String url = "";
-        Account account = new Account();
+        Account account;
         HttpSession session = request.getSession();
         switch (command) {
             case "insert":
+                account = new Account();
                 account.setUsername(request.getParameter("username"));
                 account.setPassword(request.getParameter("password"));
                 account.setName(request.getParameter("acc_name"));
@@ -81,9 +82,20 @@ public class AccountServlet extends HttpServlet {
                     session.setAttribute("error", "Tên đăng nhập và mật khẩu bạn đã nhập không khớp với bất kỳ tài khoản nào.");
                 }
                 break;
-            case "logout":
+            case "update":
+                account = new Account();
+                account.setId(Integer.parseInt(request.getParameter("acc_id")));
+                account.setUsername(request.getParameter("username"));
+                account.setPassword(request.getParameter("password"));
+                account.setName(request.getParameter("acc_name"));
+                account.setAddress(request.getParameter("address"));
+                account.setEmail(request.getParameter("email"));
+                account.setPhonenumber(request.getParameter("phonenumber"));
+                account.setType(2);
+                account.setIdle(0);
+                accountDAO.updateAccount(account);
+                session.setAttribute("account", account);
                 url = "/index.jsp";
-                session.invalidate();
                 break;
         }
         RequestDispatcher rd = getServletContext().getRequestDispatcher(url);
