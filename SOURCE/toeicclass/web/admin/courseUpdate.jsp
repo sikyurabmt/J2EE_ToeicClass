@@ -1,9 +1,3 @@
-<%-- 
-    Document   : courseUpdate
-    Created on : May 24, 2017, 11:58:01 PM
-    Author     : VegetaPC
---%>
-
 <%@page import="BEAN.Course"%>
 <%@page import="DAO.CourseDAO"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>

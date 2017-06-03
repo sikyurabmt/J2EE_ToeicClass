@@ -1,9 +1,3 @@
-<%-- 
-    Document   : contactManager
-    Created on : Jun 1, 2017, 5:18:18 PM
-    Author     : VegetaPC
---%>
-
 <%@page import="BEAN.Contact"%>
 <%@page import="DAO.ContactDAO"%>
 <%@page import="java.util.ArrayList"%>

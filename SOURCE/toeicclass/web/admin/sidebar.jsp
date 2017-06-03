@@ -1,9 +1,3 @@
-<%-- 
-    Document   : sidebar
-    Created on : May 24, 2017, 4:01:25 PM
-    Author     : VegetaPC
---%>
-
 <%@page import="BEAN.Account"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>

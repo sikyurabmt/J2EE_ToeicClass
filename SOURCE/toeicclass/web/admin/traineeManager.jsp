@@ -1,9 +1,3 @@
-<%-- 
-    Document   : trainee.jsp
-    Created on : May 24, 2017, 4:19:44 PM
-    Author     : VegetaPC
---%>
-
 <%@page import="BEAN.Account"%>
 <%@page import="DAO.AccountDAO"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>

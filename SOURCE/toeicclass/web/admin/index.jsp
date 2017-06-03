@@ -1,9 +1,3 @@
-<%-- 
-    Document   : sidebar
-    Created on : May 24, 2017, 4:01:25 PM
-    Author     : VegetaPC
---%>
-
 <%@page import="DAO.RegCourseDAO"%>
 <%@page import="DAO.CourseDAO"%>
 <%@page import="DAO.ContactDAO"%>

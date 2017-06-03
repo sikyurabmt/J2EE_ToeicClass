@@ -1,9 +1,3 @@
-<%-- 
-    Document   : courseManager
-    Created on : May 24, 2017, 5:43:43 PM
-    Author     : VegetaPC
---%>
-
 <%@page import="java.util.ArrayList"%>
 <%@page import="BEAN.Course"%>
 <%@page import="DAO.CourseDAO"%>
